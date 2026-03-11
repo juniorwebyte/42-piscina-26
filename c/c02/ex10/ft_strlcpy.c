@@ -1,45 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jode-fig <jode-fig@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/07 16:29:54 by jode-fig          #+#    #+#             */
-/*   Updated: 2026/03/11 17:02:31 by jode-fig         ###   ########.fr       */
+/*   Created: 2026/03/11 13:25:18 by jode-fig          #+#    #+#             */
+/*   Updated: 2026/03/11 19:26:07 by jode-fig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* #include <stdio.h> */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n);
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
 
 	i = 0;
-	while (i < n && src[i] != '\0')
+	while (src[i] != '\0')
+		i++;
+	if (size == 0)
+		return (i);
+	i = 0;
+	while (src[i] != '\0' && i < size - 1)
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	dest[i] = '\0';
+	return (i);
 }
 
 /* int	main(void)
 {
-	char	*src;
+	char	src[] = "Hello, World!";
 	char	dest[20];
+	unsigned int	size;
 
-	src = "Hello, World!";
-	ft_strncpy(dest, src, 5);
+	size = ft_strlcpy(dest, src, sizeof(dest));
 	printf("Source: %s\n", src);
 	printf("Destination: %s\n", dest);
+	printf("Size: %u\n", size);
 	return (0);
 } */

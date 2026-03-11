@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_print_memory.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jode-fig <jode-fig@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/10 17:08:47 by jode-fig          #+#    #+#             */
-/*   Updated: 2026/03/11 19:25:49 by jode-fig         ###   ########.fr       */
+/*   Created: 2026/03/11 13:36:43 by jode-fig          #+#    #+#             */
+/*   Updated: 2026/03/11 19:26:29 by jode-fig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* #include <stdio.h> */
 
-char	*ft_strupcase(char *str);
-
-char	*ft_strupcase(char *str)
+void	*ft_print_memory(void *addr, unsigned int size)
 {
-	int	i;
+	unsigned int	i;
+	unsigned char	*ptr;
 
+	ptr = (unsigned char *)addr;
 	i = 0;
-	while (str[i] != '\0')
+	while (i < size)
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] = str[i] - ('a' - 'A');
+		printf("%02x ", ptr[i]);
+		if ((i + 1) % 16 == 0)
+			printf("\n");
 		i++;
 	}
-	return (str);
+	return (addr);
 }
 
 /* int	main(void)
 {
-	char	str[] = "hello, world!";
-
-	printf("Original string: %s\n", str);
-	ft_strupcase(str);
-	printf("Uppercase string: %s\n", str);
+	char	str[] = "Hello, World!";
+	ft_print_memory(str, sizeof(str));
 	return (0);
 } */

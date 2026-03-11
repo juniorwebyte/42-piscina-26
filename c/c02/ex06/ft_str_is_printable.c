@@ -6,7 +6,7 @@
 /*   By: jode-fig <jode-fig@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 21:13:04 by jode-fig          #+#    #+#             */
-/*   Updated: 2026/03/07 21:21:12 by jode-fig         ###   ########.fr       */
+/*   Updated: 2026/03/11 17:31:12 by jode-fig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_str_is_printable(char *str)
 	char	*str3;
 
 	str1 = "Hello, World!";
-	str2 = "Hello\nWorld";
+	str2 = "Hello\nWorld!";
 	str3 = "";
 	printf("String: '%s' - Is printable? %d\n", str1, ft_str_is_printable(str1));
 	printf("String: '%s' - Is printable? %d\n", str2, ft_str_is_printable(str2));

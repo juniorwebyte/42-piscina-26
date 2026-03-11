@@ -6,7 +6,7 @@
 /*   By: jode-fig <jode-fig@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 14:03:02 by jode-fig          #+#    #+#             */
-/*   Updated: 2026/03/07 16:14:06 by jode-fig         ###   ########.fr       */
+/*   Updated: 2026/03/11 16:58:25 by jode-fig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ char	*ft_strcpy(char *dest, char *src)
 
 	src = "Hello, World!";
 	ft_strcpy(dest, src);
+	printf("Source: %s\n", src);
+	printf("Destination: %s\n", dest);
 	return (0);
 } */

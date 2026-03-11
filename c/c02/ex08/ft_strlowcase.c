@@ -1,44 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jode-fig <jode-fig@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/07 21:08:08 by jode-fig          #+#    #+#             */
-/*   Updated: 2026/03/11 17:19:30 by jode-fig         ###   ########.fr       */
+/*   Created: 2026/03/10 19:52:58 by jode-fig          #+#    #+#             */
+/*   Updated: 2026/03/11 18:07:46 by jode-fig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* #include <stdio.h> */
 
-int	ft_str_is_lowercase(char *str);
+char	*ft_strlowcase(char *str);
 
-int	ft_str_is_lowercase(char *str)
+char	*ft_strlowcase(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] < 'a' || str[i] > 'z')
-			return (0);
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] = str[i] + ('a' - 'A');
 		i++;
 	}
-	return (1);
+	return (str);
 }
 
 /* int	main(void)
 {
-	char	*str1;
-	char	*str2;
-	char	*str3;
+	char	str[] = "HELLO, WORLD!";
 
-	str1 = "hello, world!";
-	str2 = "Hello, World!";
-	str3 = "";
-	printf("String: '%s' - Is lowercase? %d\n", str1, ft_str_is_lowercase(str1));
-	printf("String: '%s' - Is lowercase? %d\n", str2, ft_str_is_lowercase(str2));
-	printf("String: '%s' - Is lowercase? %d\n", str3, ft_str_is_lowercase(str3));
+	printf("Original string: %s\n", str);
+	ft_strlowcase(str);
+	printf("Lowercase string: %s\n", str);
 	return (0);
 } */

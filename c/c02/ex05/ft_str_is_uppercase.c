@@ -6,7 +6,7 @@
 /*   By: jode-fig <jode-fig@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/07 21:10:50 by jode-fig          #+#    #+#             */
-/*   Updated: 2026/03/07 21:20:59 by jode-fig         ###   ########.fr       */
+/*   Updated: 2026/03/11 17:24:28 by jode-fig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int	ft_str_is_uppercase(char *str)
 	char	*str2;
 	char	*str3;
 
-	str1 = "HELLOWORLD";
-	str2 = "HelloWorld";
+	str1 = "HELLO, WORLD!";
+	str2 = "Hello, World!";
 	str3 = "";
 	printf("String: '%s' - Is uppercase? %d\n", str1, ft_str_is_uppercase(str1));
 	printf("String: '%s' - Is uppercase? %d\n", str2, ft_str_is_uppercase(str2));
